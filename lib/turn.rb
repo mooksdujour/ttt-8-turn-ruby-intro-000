@@ -13,10 +13,11 @@ def turn(board)
   if user_input >= 1 && user_input <= 9
     index = input_to_index(user_input)
     move(board, index)
+    display_board(board)
   else
     turn(board)
   end
-  display_board(board)
+  
 end
 
 def input_to_index (user_input)
