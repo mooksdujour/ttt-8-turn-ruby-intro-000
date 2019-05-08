@@ -9,6 +9,5 @@ def display_board(board)
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip.chomp
-  
-  end
 
+  end
