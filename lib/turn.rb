@@ -8,4 +8,7 @@ def display_board(board)
 
 def turn(board)
   puts "Please enter 1-9:"
-end
+  input = gets.strip.chomp
+  
+  end
+
