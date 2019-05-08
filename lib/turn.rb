@@ -12,8 +12,10 @@ def turn(board)
   user_input = input.to_i
   if user_input >= 1 && user_input <= 9
     index = input_to_index(user_input)
-    move(board, index)
-    display_board(board)
+    if valid_move?(board,index)
+      move(board, index)
+      display_board(board)
+    end
   else
     turn(board)
   end
@@ -26,4 +28,19 @@ end
 
 def move (board, index, character = "X")
   board[index] = character
+end
+
+def valid_move?(board, index)
+  if position_taken?(board, index) || (index > 9 || index < 0)
+    return false
+  end
+  true
+end
+
+# re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
+def position_taken?(board, index)
+  if board[index] == "X" || board[index] == "O"
+    return true
+  end
+  false
 end
