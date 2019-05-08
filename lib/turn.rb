@@ -11,7 +11,7 @@ def turn(board)
   input = gets.strip.chomp
   user_input = input.to_i
   if user_input >= 1 && user_input <= 9
-    input_to_index(user_input)
+    index = input_to_index(user_input)
     move(board, index)
   else
     turn(board)
